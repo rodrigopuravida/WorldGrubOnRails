@@ -51,6 +51,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/app\/assets\/images\/world-bottom.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 162717,
+		"inputAbbreviatedPath": "\/app\/assets\/images\/world-bottom.jpg",
+		"outputAbbreviatedPath": "\/app\/assets\/images\/world-bottom.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/app\/assets\/images\/worldgrub.png": {
 		"fileType": 32768,
 		"ignore": 0,
