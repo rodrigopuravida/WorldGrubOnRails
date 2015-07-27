@@ -1,0 +1,4 @@
+.ingredient-list-text, .ingredient-input-text {
+    background: White;
+    @include border-width(1em 20px null 100%);
+}

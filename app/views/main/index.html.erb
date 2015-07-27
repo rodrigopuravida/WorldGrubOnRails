@@ -14,12 +14,14 @@
         <link rel="stylesheet" href="assets/main.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="assets/script.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+            <!--images are 1024 x 768-->
             <header class="head" role="banner">
                 <a href="" class="logo">
                 <img src="assets/worldgrub.png" alt="World Grub">
@@ -27,19 +29,41 @@
                 </a>
 
             </header><!-- end header -->
+        
+        <div class="top-divider">
+            
+        </div>
 
             <div class="wrap main-content">
             <section class="grid-ingredients">   
                 <div class="ingredient-input">
-                    <h2>Add Ingredients</h3>
+                    <h2>Ingredients</h3>
                         <form id="ingredient-input-form">
                             <div>
                                 <label>
-                                <input type="text" id="ingredient-text" size="24">
+                                <input type="text" class="ingredient-input-text" size="15">
                                 </label>
                             </div>
-                            <input type="submit" class="btn btn-add-ingredient" value="Add Ingredient">   
+                            <input type="submit" class="btn btn-add-ingredient" value="Add">
+                            <label>
+                                <input type="text" class="ingredient-list-text" size="80" readonly>
+                            </label>
                         </form>
+                    <label>
+                        <div id="cf">
+                            <img class="bottom" src="assets/korea.jpg" alt="Region">
+                            <img class="top" src="assets/africa.jpg" alt="Region">
+                        </div>
+                        
+                        <div id="cf7" class="shadow">
+                              <img class='opaque' src="assets/korea.jpg" />
+                              <img src="assets/africa.jpg" />
+                        </div>
+                            <p id="cf7_controls">
+                              <span class="selected">Image 1</span>
+                              <span>Image 2</span>
+                            </p>
+                    </label>
                 </div>
                 
                 <div class="ingredients-list">
@@ -52,17 +76,42 @@
 
             <aside class="sidebar">
 
-            <h2>Regions of the World</h2>    
-
+            <h2>Regions of the World</h2> 
+<!--                    african, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, or                      latin american.-->
+                 
+                <ul class="region-list">
+                    <li><a href="">african</a></li>
+                    <li><a href="">chinese</a></li>
+                    <li><a href="">japanese</a></li>
+                    <li><a href="">korean</a></li>
+                    <li><a href="">vietnamese</a></li>
+                    <li><a href="">thai</a></li>
+                    <li><a href="">indian</a></li>
+                    <li><a href="">british</a></li>
+                    <li><a href="">irish</a></li>
+                    <li><a href="">french</a></li>
+                    <li><a href="">italian</a></li>
+                    <li><a href="">mexican</a></li>
+                    <li><a href="">spanish</a></li>
+                    <li><a href="">middle eastern</a></li>
+                    <li><a href="">jewish</a></li>
+                    <li><a href="">american</a></li>
+                    <li><a href="">cajun</a></li>
+                    <li><a href="">southern</a></li>
+                    <li><a href="">greek</a></li>
+                    <li><a href="">german</a></li>
+                    <li><a href="">nordic</a></li>
+                    <li><a href="">eastern european</a></li>
+                    <li><a href="">caribbean</a></li>
+                    <li><a href="">vietnamese</a></li>
+                    <li><a href="">latin american</a></li>          
+                </ul>
             </aside>
         </div><!--end wrap -->
 
-        <section class="bottom-widgets wrap">
-            <h2>Here is bottom map</h2>
-            
-        </section>
-
+        
         <footer class="foot">
+            
             
         </footer>
 

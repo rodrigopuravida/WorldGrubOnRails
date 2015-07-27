@@ -1,3 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,300);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 /*! normalize.css v1.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -452,11 +459,18 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+body {
+  font-family: "Roboto", sans-serif; }
+
+h1, h2, h3, h4, h5, h6, .region-list {
+  font-family: "Roboto Slab", serif;
+  font-weight: bold; }
+
 .head {
   text-align: center;
   margin-top: 25px; }
   .head .logo {
-    max-width: 250px;
+    max-width: 500px;
     display: inline-block;
     transition: max-width .6s; }
     @media (max-width: 42em) {
@@ -465,6 +479,17 @@ html {
 
 body {
   background: #f5f5f5; }
+  body label {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-top-width: 1em;
+    border-right-width: 20px;
+    border-left-width: 100%; }
+
+.top-divider {
+  background-image: -webkit-linear-gradient(white 0, yellow 50%, transparent 50%);
+  background-image: linear-gradient(to   , yellow 50%, transparent 50%); }
 
 * {
   box-sizing: border-box; }
@@ -477,7 +502,17 @@ img {
   max-width: 1600px;
   margin: 0 auto; }
 
+.wrap main-content {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .wrap main-content::after {
+    clear: both;
+    content: "";
+    display: table; }
+
 .grid-ingredients {
+  margin-left: 0px;
   float: left;
   display: block;
   margin-right: 2.3576515979%;
@@ -528,3 +563,83 @@ img {
       width: 100%; }
       .sidebar:last-child {
         margin-right: 0; } }
+
+ul {
+  font-size: 80%;
+  list-style: square inside;
+  margin: 0;
+  padding: 0 1em; }
+  ul li:last-child a {
+    border-bottom: none; }
+  ul a {
+    color: #333;
+    display: block;
+    text-decoration: none;
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+p#cf7_controls {
+  text-align: center; }
+
+#cf7_controls span {
+  padding-right: 2em;
+  cursor: pointer; }
+
+#cf7 {
+  position: relative;
+  height: 768px;
+  width: 1024px;
+  margin: 0 auto 10px; }
+
+#cf7 img {
+  position: absolute;
+  left: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0); }
+
+#cf7 img.opaque {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=1); }
+
+.sidebar {
+  color: Black;
+  box-shadow: -4px 0px 10px -2px rgba(0, 0, 0, 0.14); }
+
+.btn btn-add-ingredient {
+  background-color: #ff0000;
+  background-image: -webkit-linear-gradient(top, #ff0000 0%, #c70000 50%, #a90000 50%, #b00000 100%);
+  background-image: linear-gradient(to bottom,#ff0000 0%, #c70000 50%, #a90000 50%, #b00000 100%);
+  border: 1px solid #8a0000;
+  border-bottom: 1px solid #810000;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 0 #ff1d0c;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  padding: 7px 18px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #730000; }
+  .btn btn-add-ingredient:hover:not(:disabled) {
+    background-color: #f20000;
+    background-image: -webkit-linear-gradient(top, #f20000 0%, #bd0000 50%, #a20000 50%, #a90000 100%);
+    background-image: linear-gradient(to bottom,#f20000 0%, #bd0000 50%, #a20000 50%, #a90000 100%);
+    cursor: pointer; }
+  .btn btn-add-ingredient:active:not(:disabled), .btn btn-add-ingredient:focus:not(:disabled) {
+    box-shadow: inset 0 0 20px 0 #900000; }
+  .btn btn-add-ingredient:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
+.ingredient-list-text, .ingredient-input-text {
+  background: White;
+  border-top-width: 1em;
+  border-right-width: 20px;
+  border-left-width: 100%; }

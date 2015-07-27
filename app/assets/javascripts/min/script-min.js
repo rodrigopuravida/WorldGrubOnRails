@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#cf7_controls").on("click","span",function(){$("#cf7 img").removeClass("opaque");var e=$(this).index();$("#cf7 img").eq(e).addClass("opaque"),$("#cf7_controls span").removeClass("selected"),$(this).addClass("selected")})});

@@ -1,5 +1,15 @@
 body {
     background: $bg-color;
+        label {
+            display: block;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            @include border-width(1em 20px null 100%);
+        }
+}
+
+.top-divider {
+    @include background-image(linear-gradient(white 0, yellow 50%, transparent 50%));
 }
 
 * {
@@ -16,7 +26,12 @@ img {
     margin: 0 auto;
 }
 
+.wrap main-content {
+    @include outer-container;
+}
+
 .grid-ingredients {
+    margin-left:0px;
     @include span-columns(9);
     padding-top: 1.5em;
     
@@ -40,5 +55,59 @@ img {
     
     @media(max-width: $small){
         @include span-columns(12);
+    }    
+}
+
+ul {
+    font-size: 80%;
+    list-style: square inside;
+    margin: 0;
+    padding: 0 1em;;
+            
+        li {
+            &:last-child {
+            a {
+                    border-bottom: none;
+            }
+            }
+        }
+            a{
+                color: $dark-grey;
+                display: block;
+                text-decoration: none;
+                padding: 1em 0;
+                border-bottom: 1px solid rgba(black, .10);
+        }
     }
+
+
+p#cf7_controls {
+  text-align:center;
+}
+#cf7_controls span {
+  padding-right:2em;
+  cursor:pointer;
+}
+#cf7 {
+  position:relative;
+  height:768px;
+  width:1024px;
+  margin:0 auto 10px;
+}
+#cf7 img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity:0;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+#cf7 img.opaque {
+  opacity:1;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=1);
 }

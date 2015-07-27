@@ -1,8 +1,16 @@
+@import "bourbon";
+@import "neat";
+
 @import 'normalize';
 @import 'helpers/_variables';
+@import 'helpers/_fonts';
 
 
 
 //components
 @import './components/header';
 @import './components/layout';
+@import './components/sidebar';
+@import './components/buttons';
+@import './components/textbox';
+
