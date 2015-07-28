@@ -1,5 +1,5 @@
 body {
-    background: $bg-color;
+    background: $hip-yellow;
         label {
             display: block;
             margin-bottom: 20px;
@@ -38,6 +38,65 @@ img {
 .grid-ingredients {
     margin-left:0px;
     @include span-columns(9);
+    padding-top: 1.5em;
+    
+    @media(max-width: $medium){
+        @include span-columns(8);
+        padding-top: 0;
+    }
+    
+    @media(max-width: $small){
+        @include span-columns(12);
+    }
+}
+
+.outer-container-recipes {
+    @include border-style(solid);
+    @include border-width(1px);
+    @include border-top-radius(5px);
+    @include border-right-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+    
+    background: tint(yellow, 90%);
+   
+     
+    
+    
+    margin-left:0px;
+    @include outer-container;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    
+    @media(max-width: $medium){
+        @include span-columns(8);
+        padding-top: 0;
+    }
+    
+    @media(max-width: $small){
+        @include span-columns(12);
+    }
+}
+
+.recipe-image-container {
+    margin-left:0px;
+   @include span-columns(4);
+    padding-top: 1.5em;
+    
+    @media(max-width: $medium){
+        @include span-columns(8);
+        padding-top: 0;
+    }
+    
+    @media(max-width: $small){
+        @include span-columns(12);
+    }
+}
+
+.recipe-title-container {
+    margin-left:0px;
+   @include span-columns(8);
+    @include omega();
     padding-top: 1.5em;
     
     @media(max-width: $medium){

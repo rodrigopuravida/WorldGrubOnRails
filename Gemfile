@@ -32,6 +32,8 @@ gem 'bitters'
 
 gem 'foreman'
 
+gem 'unirest'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
