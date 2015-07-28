@@ -50,6 +50,7 @@ img {
 }
 
 .outer-container-recipes {
+    @include outer-container;
     @include border-style(solid);
     @include border-width(1px);
     @include border-top-radius(5px);
@@ -58,12 +59,9 @@ img {
     @include border-left-radius(5px);
     
     background: tint(yellow, 90%);
-   
-     
-    
-    
+    text-align: center;
     margin-left:0px;
-    @include outer-container;
+   
     padding-top: 1.5em;
     padding-bottom: 1.5em;
     
@@ -77,36 +75,29 @@ img {
     }
 }
 
-.recipe-image-container {
+.ingredients-image-container {
+    @include span-columns(4);
     margin-left:0px;
-   @include span-columns(4);
-    padding-top: 1.5em;
     
-    @media(max-width: $medium){
-        @include span-columns(8);
-        padding-top: 0;
-    }
-    
-    @media(max-width: $small){
-        @include span-columns(12);
-    }
 }
 
-.recipe-title-container {
-    margin-left:0px;
-   @include span-columns(8);
-    @include omega();
-    padding-top: 1.5em;
-    
-    @media(max-width: $medium){
-        @include span-columns(8);
-        padding-top: 0;
-    }
-    
-    @media(max-width: $small){
-        @include span-columns(12);
-    }
+.ingredients-directions-container{
+    @include span-columns(8);
 }
+
+.ingredients-container{
+    @include span-columns(4 of 8);
+    display: block;
+    margin-left:0px;
+    margin-bottom: 0px;
+    text-align: left;
+//    height: 20em;
+}
+
+.directions-container {
+    @include span-columns(4 of 8);
+}
+
 
 .sidebar {
     @include span-columns(3);

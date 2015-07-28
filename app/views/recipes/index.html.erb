@@ -33,42 +33,25 @@
 
         </header><!-- end header -->
         
-        <!--  Beginning to build structure with near  -->
-        
-<!--
-        <div class="outer-container-recipes">
-            <h1>Outer container recipes</h1>
-            <div class="recipe-image-container">
-                <h2>recipe image container</h2>
-            </div>
-            <div class="recipe-title-container">
-                <h2>recipe title container</h2>
-            </div>
-        
-        </div>
-        
-        
--->
+    
          
         <% @data.each do |item| %>
         <div class="outer-container-recipes">
-           
-            <div class="recipe-image-container">
-                <img src=<%= @baseUri + item["image"] %>>
+            <h1><%= item["title"] %></h1> 
+            <div class="ingredients-image-container">
+                <img src=<%= @baseUri + item["image"] %> >
             </div>
-            <div class="recipe-title-container">
-                <h2><%= item["title"] %></h2>
+        <% end %>
+            <div class="ingredients-directions-container">
+                <div class="ingredients-container">
+                    <% @dataRecipeInfo.each do |info| %>    
+                    <div><p><%= info["name"]%></p></div>
+                    <% end %>
+                </div>
+                <div class="directions-container">
+                    <h3>Directions</h3>
+                </div>   
             </div>
-        
-        </div>
-<!--
-        Id: <%= item["id"] %><br />
-        Title: <%= item["title"] %><br />
-        ImageUrl: <%= @baseUri + item["image"] %><br />
--->
-            <% end %>
-
-<!--        <%= @data  %>-->
-
-    </body>
+       </div>        
+   </body>
 </html>
