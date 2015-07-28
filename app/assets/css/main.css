@@ -495,12 +495,8 @@ body {
   box-sizing: border-box; }
 
 img {
-  max-width: 100%;
-  height: auto; }
-
-.region-images {
-  max-width: 100%;
-  height: auto; }
+  height: 20em;
+  width: 20em; }
 
 .wrap {
   max-width: 1600px;

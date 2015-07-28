@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     
     
     def index
-       response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=italian&number=25&offset=0&query=pasta%2C+beef",        
+       response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=italian&number=10&offset=0&query=pasta%2C+beef",        
   headers:{
     "X-Mashape-Key" => ENV["RECIPE_API"],
     "Accept" => "application/json"
@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
             @dataRecipeInfo = response2.body["extendedIngredients"];
             allRecipesInfo.push(@dataRecipeInfo);
         };
-        render json: @dataRecipeInfo;
+#        render json: @dataRecipeInfo;
 
         
         

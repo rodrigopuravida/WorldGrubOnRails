@@ -17,14 +17,12 @@ body {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    @include size(20em);
+//    max-width: 100%;
+//    height: auto;
 }
 
-.region-images {
-    max-width: 100%;
-    height: auto;
-}
+
 
 .wrap {
     max-width: 1600px;
