@@ -34,6 +34,8 @@ gem 'foreman'
 
 gem 'unirest'
 
+gem 'bootstrap_form'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
