@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     
     # include all CRUD routes
     resources :recipes
+    
+    
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

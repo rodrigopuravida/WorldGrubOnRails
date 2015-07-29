@@ -13,34 +13,29 @@ $(document).ready(function() {
     
     //sample string = 
     
-////    # These code snippets use an open-source library. http://unirest.io/ruby
-//response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=italian&number=100&offset=0&query=burger%2C+lettuce%2Ctortillas",
-//  headers:{
-//    "X-Mashape-Key" => "A7ggDVHuZBmshbIcUqquqFDuWxZup1tLMDnjsnx8QpPISvJnPZ",
-//    "Accept" => "application/json"
-//  }
+
     
-    $(".region-list").on('click', 'li', function(e) {
-        
-//        alert($(this).text());
-        
-        e.preventDefault();
-        var constantInitialString = "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=";
-        var region = $(this).text();
-        var numberAndOffset = '&number=100&offset=0&query='
-        
-        //modifying ingredient string from before when addding ingredients to replace commas with %2C
-//        console.log('This is my clicking');
-//        console.log(buildingList);
-         
-        var slicedStringOfIngredients = ingredientListForApi.slice(0, ingredientListForApi.length-3)
-//        console.log(slicedStringOfIngredients);
+//    $(".region-list").on('click', 'li', function(e) {
 //        
-        apiString = constantInitialString + region + numberAndOffset + slicedStringOfIngredients + ',';
-        
-        console.log(apiString);
-    
-  });
+////        alert($(this).text());
+//        
+//        e.preventDefault();
+//        var constantInitialString = "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=";
+//        var region = $(this).text();
+//        var numberAndOffset = '&number=100&offset=0&query='
+//        
+//        //modifying ingredient string from before when addding ingredients to replace commas with %2C
+////        console.log('This is my clicking');
+////        console.log(buildingList);
+//         
+//        var slicedStringOfIngredients = ingredientListForApi.slice(0, ingredientListForApi.length-3)
+////        console.log(slicedStringOfIngredients);
+////        
+//        apiString = constantInitialString + region + numberAndOffset + slicedStringOfIngredients + ',';
+//        
+//        console.log(apiString);
+//    
+//  });
     
         
     

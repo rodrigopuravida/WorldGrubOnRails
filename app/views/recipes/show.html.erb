@@ -1,0 +1,32 @@
+<header class="head" role="banner">
+        <a href="" class="logo">
+        <%= image_tag("worldgrub.png") %>
+
+        </a>
+
+</header><!-- end header -->
+
+
+
+
+<div class="outer-container-recipes">
+    <% @data.each do |item| %>
+    <h1><%= item["title"] %></h1> 
+    <div class = "row-table-container">
+        <div class="ingredients-image-container">
+            <img src=<%= @baseUri + item["image"] %> >
+        </div>
+        <% end %>
+
+        <div class="ingredients-container">
+            <% @dataRecipeInfo.each do |info| %>    
+            <div><h2><%=info["originalString"]%></h2></div>
+            <% end %>
+        </div>
+<!--
+        <div class="directions-container">
+            <h3>Directions</h3>
+        </div>
+-->
+    </div>
+</div>        

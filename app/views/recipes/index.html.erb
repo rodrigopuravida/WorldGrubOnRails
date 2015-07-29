@@ -1,57 +1,80 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/main.css">
-
-     
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-
-      
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <header class="head" role="banner">
+            <!--images are 1024 x 768-->
+            <header class="head" role="banner">
                 <a href="" class="logo">
                 <img src="assets/worldgrub.png" alt="World Grub">
-                    
+
                 </a>
 
-        </header><!-- end header -->
-        
-    
-         
-        <% @data.each do |item| %>
-        <div class="outer-container-recipes">
-            <h1><%= item["title"] %></h1> 
-            <div class="ingredients-image-container">
-                <img src=<%= @baseUri + item["image"] %> >
-            </div>
-        <% end %>
-            <div class="ingredients-directions-container">
-                <div class="ingredients-container">
-                    <% @dataRecipeInfo.each do |info| %>    
-                    <div><p><%= info["name"]%></p></div>
-                    <% end %>
+            </header><!-- end header -->
+
+        <div class="top-divider">
+
+        </div>
+
+            <div class="wrap main-content">
+            <section class="grid-ingredients">
+                <div class="ingredient-input">
+                    <h2 class="text-with-padding">Ingredients</h3>
+                        <form id="ingredient-input-form">
+                            <div>
+                                <label>
+                                <input type="text" class="ingredient-input-text" id="ingredient-input" size="15">
+                                 </label>
+                            </div>
+                            <input type="submit" class="btn btn-add-ingredient" value="Add">
+                            </form>
+
+                            <%= form_for :recipe, url: "/recipes/chinese", :method => :get, html: {class: "recipe_form"} do |f| %>
+                              <%= f.text_field :ingredients, class: "ingredient-list-text", id: "ingredient-list", size: "80", :readonly => false  %>
+                              <%= f.radio_button :region, "african" %> African<br />
+                              <%= f.radio_button :region, "japanese" %> Japanese<br />
+
+
+
+                              <%= f.submit "Submit" %>
+                    <label>
+                        <div class="region-images">
+                            <img src="assets/world-bottom.jpg" class="world-map" alt="Region">
+                        </div>
+                    </label>
                 </div>
-                <div class="directions-container">
-                    <h3>Directions</h3>
-                </div>   
-            </div>
-       </div>        
-   </body>
-</html>
+                <div class="ingredients-list">
+            </section><!-- end product grid -->
+            <aside class="sidebar">
+            <h2>Regions of the World</h2>
+
+                <ul class="region-list" id="cf7_controls">
+
+                    <li><%= link_to "african", recipe_path("african") %></li>
+                    <li><%= link_to "chinese", recipe_path("chinese"), {:controller => :recipes, :action => :show} %></li>
+                    <li><%= link_to "japanese", recipe_path("japanese") %></li>
+                    <li><%= link_to "korean", recipe_path("korean") %></li>
+                    <li><%= link_to "vietnamese", recipe_path("vietnamese") %></li>
+                    <li><%= link_to "thai", recipe_path("thai") %></li>
+                    <li><%= link_to "indian", recipe_path("indian") %></li>
+                    <li><%= link_to "british", recipe_path("british") %></li>
+                    <li><%= link_to "irish", recipe_path("irish") %></li>
+                    <li><%= link_to "french", recipe_path("french") %></li>
+                    <li><%= link_to "italian", recipe_path("italian") %></li>
+                    <li><%= link_to "mexican", recipe_path("mexican") %></li>
+                    <li><%= link_to "spanish", recipe_path("spanish") %></li>
+                    <li><%= link_to "jewish", recipe_path("jewish") %></li>
+                    <li><%= link_to "american", recipe_path("american") %></li>
+                    <li><%= link_to "cajun", recipe_path("cajun") %></li>
+                    <li><%= link_to "southern", recipe_path("southern") %></li>
+                    <li><%= link_to "greek", recipe_path("greek") %></li>
+                    <li><%= link_to "german", recipe_path("german") %></li>
+                    <li><%= link_to "nordic", recipe_path("nordic") %></li>
+                    <li><%= link_to "caribbean", recipe_path("caribbean") %></li>
+                    <li><%= link_to "vietnamese", recipe_path("vietnamese") %></li>
+                </ul>
+                <% end %>
+            </aside>
+        </div><!--end wrap -->
+
+
+        <footer class="foot">
+
+
+        </footer>
