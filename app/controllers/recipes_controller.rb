@@ -5,10 +5,7 @@ class RecipesController < ApplicationController
     require 'unirest'
 
     def index
-# render :json => "Hello"
     end
-
-
 
     def show
 
@@ -16,7 +13,6 @@ class RecipesController < ApplicationController
         @ingredients = recipe_params[:ingredients]
 
         p recipe_params
-
 
         recipesIds = [];
         allRecipesInfo = [];
@@ -48,9 +44,21 @@ class RecipesController < ApplicationController
 #       render json: @dataRecipeInfo;
     end
 
+    def new
+    @recipe = Recipe.new
+    end
 
 
-
+    def create
+        @recipe = current_user.recipes.create recipe_id_param
+        if @recipe.persisted?
+          flash[:success] = "Your recipe has been added to favorites"
+          redirect_to root_path
+        else
+          flash[:danger] = @recipe.errors.full_messages.uniq.to_sentence
+          render :new
+        end
+      end
 
         private
 
@@ -58,8 +66,9 @@ class RecipesController < ApplicationController
            params.require(:recipe).permit(:ingredients, :region)
        end
 
-
-
+       def recipe_id_param
+           params.require(:recipe).permit(:recipe_id)
+       end
 
 
     end

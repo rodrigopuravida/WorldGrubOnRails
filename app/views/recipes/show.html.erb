@@ -14,7 +14,7 @@
         <tr>
 
                 <% @data.each do |item| %>
-                <h1><%= item["title"]%></h1>
+                <h1><%= link_to item["title"], new_recipe_path%></h1>
                 <div ><img class="recipe_image" src=<%= @baseUri + item["image"] %> ></div>
                 <% end %>
 
