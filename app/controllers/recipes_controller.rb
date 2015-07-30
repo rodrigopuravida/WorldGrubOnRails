@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
         urlStringReplaceSign = '';
 
 
-        response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=" + @region + "&number=1&offset=0&query=" + @ingredients + '"', headers:{ "X-Mashape-Key" => ENV["RECIPE_API"], "Accept" => "application/json" }
+        response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=" + @region + "&number=2&offset=0&query=" + @ingredients + '"', headers:{ "X-Mashape-Key" => ENV["RECIPE_API"], "Accept" => "application/json" }
 
         @data = response.body["results"];
         @baseUri= response.body["baseUri"];

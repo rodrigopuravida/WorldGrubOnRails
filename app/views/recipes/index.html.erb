@@ -1,5 +1,5 @@
 
-            <!--images are 1024 x 768-->
+
             <header class="head" role="banner">
                 <a href="" class="logo">
                 <img src="assets/worldgrub.png" alt="World Grub">
@@ -7,10 +7,11 @@
                 </a>
 
             </header><!-- end header -->
+            <h1>Ingredients</h1>
 
         <div id="main-container" class="container">
             <sdiv class="row">
-                <div class="col-md-8" >
+                <div class="col-md-8" class="font-mega">
 
 
                             <%= bootstrap_form_for :recipe, url: "/recipes/chinese", :method => :get, html: {class: "recipe_form"} do |f| %>
@@ -41,6 +42,8 @@
             </div>
 
             </div>
+
+
 
         </div><!--end wrap -->
 

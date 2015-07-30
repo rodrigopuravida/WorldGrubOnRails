@@ -8,31 +8,36 @@
 
 <div id="main-container" class="container">
 
-<div class="col-md-4" >
-<table>
-    <tr>
+    <div class="col-md-4" >
+    <table class="table table-striped">
+    <tbody>
+        <tr>
 
-            <% @data.each do |item| %>
-            <h1><%= item["title"] %></h1>
-            <div ><img class="recipe_image" src=<%= @baseUri + item["image"] %> ></div>
-            <% end %>
+                <% @data.each do |item| %>
+                <h1><%= item["title"]%></h1>
+                <div ><img class="recipe_image" src=<%= @baseUri + item["image"] %> ></div>
+                <% end %>
 
+            </tr>
+            </table>
+    </div>
+
+
+    <div class="col-md-8" >
+    <table>
+        <tr>
+                <% @dataRecipeInfo.each do |info| %>
+                <h3><%=info["originalString"]%></h3>
+                <% end %>
         </tr>
-        </table>
-</div>
+        </tbody>
+    </table>
+    </div>
 
 
-<div class="col-md-8" >
-<table>
-    <tr>
 
-                    <% @dataRecipeInfo.each do |info| %>
-                    <div><h2><%=info["originalString"]%></h2></div>
-                    <% end %>
 
-    </tr>
-</table>
-</div>
+
 
 </div>
 
