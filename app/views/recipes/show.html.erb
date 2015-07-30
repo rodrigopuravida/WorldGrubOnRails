@@ -6,27 +6,33 @@
 
 </header><!-- end header -->
 
+<div id="main-container" class="container">
 
+<div class="col-md-4" >
+<table>
+    <tr>
 
-
-<div class="outer-container-recipes">
-    <% @data.each do |item| %>
-    <h1><%= item["title"] %></h1> 
-    <div class = "row-table-container">
-        <div class="ingredients-image-container">
-            <img src=<%= @baseUri + item["image"] %> >
-        </div>
-        <% end %>
-
-        <div class="ingredients-container">
-            <% @dataRecipeInfo.each do |info| %>    
-            <div><h2><%=info["originalString"]%></h2></div>
+            <% @data.each do |item| %>
+            <h1><%= item["title"] %></h1>
+            <div ><img class="recipe_image" src=<%= @baseUri + item["image"] %> ></div>
             <% end %>
-        </div>
-<!--
-        <div class="directions-container">
-            <h3>Directions</h3>
-        </div>
--->
-    </div>
-</div>        
+
+        </tr>
+        </table>
+</div>
+
+
+<div class="col-md-8" >
+<table>
+    <tr>
+
+                    <% @dataRecipeInfo.each do |info| %>
+                    <div><h2><%=info["originalString"]%></h2></div>
+                    <% end %>
+
+    </tr>
+</table>
+</div>
+
+</div>
+

@@ -8,76 +8,41 @@
 
             </header><!-- end header -->
 
-        <div class="top-divider">
+        <div id="main-container" class="container">
+            <sdiv class="row">
+                <div class="col-md-8" >
 
-        </div>
 
-            <div class="wrap main-content">
-            <section class="grid-ingredients">
-                <div class="ingredient-input">
-                    <h2 class="text-with-padding">Ingredients</h3>
-                        <form id="ingredient-input-form">
-                            <div>
-
-                            </div>
-                            <input type="submit" class="btn btn-add-ingredient" value="Add">
-                            </form>
-
-                            <%= form_for :recipe, url: "/recipes/chinese", :method => :get, html: {class: "recipe_form"} do |f| %>
+                            <%= bootstrap_form_for :recipe, url: "/recipes/chinese", :method => :get, html: {class: "recipe_form"} do |f| %>
                               <%= f.text_field :ingredients, class: "ingredient-list-text", id: "ingredient-list", size: "80", :readonly => false  %>
+                              <div class="col-md-3">
                               <%= f.radio_button :region, "african" %> African<br />
                               <%= f.radio_button :region, "japanese" %> Japanese<br />
+                              </div>
+                              <div class="col-md-3">
                               <%= f.radio_button :region, "chinese" %> Chinese<br />
                               <%= f.radio_button :region, "indian" %> Indian<br />
+                              </div>
+                              <div class="col-md-3">
                               <%= f.radio_button :region, "french" %> French<br />
                               <%= f.radio_button :region, "italian" %> Italian<br />
+                              </div>
+                              <div class="col-md-3">
                               <%= f.radio_button :region, "mexican" %> Mexican<br />
                               <%= f.radio_button :region, "greek" %> Greek<br />
+                              </div>
 
-                              <%= f.submit "Submit" %>
-                                <label>
-                                    <div class="region-images">
-                                        <!-- <img src="assets/world-bottom.jpg" class="world-map" alt="Region"> -->
-                                    </div>
-                                </label>
                 </div>
-                 <div class="ingredients-list">
-            </section><!-- end product grid -->
 
-            <!-- <aside class="sidebar">
-            <h2>Regions of the World</h2>
-
-                <ul class="region-list" id="cf7_controls">
-
-                    <li><%= link_to "african", recipe_path("african") %></li>
-                    <li><%= link_to "chinese", recipe_path("chinese"), {:controller => :recipes, :action => :show} %></li>
-                    <li><%= link_to "japanese", recipe_path("japanese") %></li>
-                    <li><%= link_to "korean", recipe_path("korean") %></li>
-                    <li><%= link_to "vietnamese", recipe_path("vietnamese") %></li>
-                    <li><%= link_to "thai", recipe_path("thai") %></li>
-                    <li><%= link_to "indian", recipe_path("indian") %></li>
-                    <li><%= link_to "british", recipe_path("british") %></li>
-                    <li><%= link_to "irish", recipe_path("irish") %></li>
-                    <li><%= link_to "french", recipe_path("french") %></li>
-                    <li><%= link_to "italian", recipe_path("italian") %></li>
-                    <li><%= link_to "mexican", recipe_path("mexican") %></li>
-                    <li><%= link_to "spanish", recipe_path("spanish") %></li>
-                    <li><%= link_to "jewish", recipe_path("jewish") %></li>
-                    <li><%= link_to "american", recipe_path("american") %></li>
-                    <li><%= link_to "cajun", recipe_path("cajun") %></li>
-                    <li><%= link_to "southern", recipe_path("southern") %></li>
-                    <li><%= link_to "greek", recipe_path("greek") %></li>
-                    <li><%= link_to "german", recipe_path("german") %></li>
-                    <li><%= link_to "nordic", recipe_path("nordic") %></li>
-                    <li><%= link_to "caribbean", recipe_path("caribbean") %></li>
-                    <li><%= link_to "vietnamese", recipe_path("vietnamese") %></li>
-                </ul>
+            <div class="col-md-4">
+                <h3></h3>
+                <%= f.submit "Submit" %>
                 <% end %>
-            </aside> -->
+            </div>
+
+            </div>
+
         </div><!--end wrap -->
 
 
-        <footer class="foot">
 
-
-        </footer>

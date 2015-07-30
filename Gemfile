@@ -36,6 +36,10 @@ gem 'unirest'
 
 gem 'bootstrap_form'
 
+gem 'bootstrap-sass'
+
+gem 'autoprefixer-rails'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

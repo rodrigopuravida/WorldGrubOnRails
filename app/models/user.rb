@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
 
   def display_name
-    self.name || 'Anon'
+    self.email || 'Anon'
   end
 
   def self.authenticate email, password
