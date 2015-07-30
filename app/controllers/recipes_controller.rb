@@ -1,5 +1,3 @@
-
-
 class RecipesController < ApplicationController
 
     require 'unirest'
@@ -11,6 +9,7 @@ class RecipesController < ApplicationController
 
         @region = recipe_params[:region]
         @ingredients = recipe_params[:ingredients]
+        # @recipeId = recipe_id_param[:recipe_id];
 
         p recipe_params
 
@@ -21,7 +20,7 @@ class RecipesController < ApplicationController
         urlStringReplaceSign = '';
 
 
-        response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=" + @region + "&number=2&offset=0&query=" + @ingredients + '"', headers:{ "X-Mashape-Key" => ENV["RECIPE_API"], "Accept" => "application/json" }
+        response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=" + @region + "&number=1&offset=0&query=" + @ingredients + '"', headers:{ "X-Mashape-Key" => ENV["RECIPE_API"], "Accept" => "application/json" }
 
         @data = response.body["results"];
         @baseUri= response.body["baseUri"];
@@ -46,11 +45,13 @@ class RecipesController < ApplicationController
 
     def new
     @recipe = Recipe.new
+
     end
 
 
     def create
-        @recipe = current_user.recipes.create recipe_id_param
+        @recipe = current_user.recipes.create recipe_id: params[:recipe]
+        # @recipe = current_user.recipes.create @recipeId
         if @recipe.persisted?
           flash[:success] = "Your recipe has been added to favorites"
           redirect_to root_path
@@ -66,9 +67,14 @@ class RecipesController < ApplicationController
            params.require(:recipe).permit(:ingredients, :region)
        end
 
-       def recipe_id_param
-           params.require(:recipe).permit(:recipe_id)
-       end
+       # def recipe_id_param
+       #     params.require(:recipe).permit(:recipe_id)
+       # end
 
 
     end
+
+
+
+
+
