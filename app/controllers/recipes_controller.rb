@@ -44,6 +44,21 @@ class RecipesController < ApplicationController
 #       render json: @dataRecipeInfo;
     end
 
+    def display_my_favorites
+
+        @recipes = current_user.recipes.all
+        # respond_to do |format|
+        # format.html
+        # format.json {render json: @my_recipes}
+        # format.xml {render xml: @my_recipes}
+        # end
+
+        # render @my_recipes
+
+
+    end
+
+
     def new
     @recipe = Recipe.new
 

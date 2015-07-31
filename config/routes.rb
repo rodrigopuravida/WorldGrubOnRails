@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     post 'login' => 'sessions#create'
     get 'logout' => 'sessions#destroy'
 
+    get 'myfavorites' => 'recipes#display_my_favorites'
+
 
 
   # Example of regular route:

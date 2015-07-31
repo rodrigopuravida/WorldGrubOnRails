@@ -1,0 +1,27 @@
+<header class="head" role="banner">
+        <%= image_tag("favoritefood.png")%>
+</header><!-- end header -->
+
+<div id="main-container" class="container">
+
+    <div class="col-md-4" >
+    <table class="table table-striped">
+    <tbody>
+        <h3>Recipe Id</h3>
+    <% @recipes.each do |recipe| %>
+
+        <tr>
+        <td><%= recipe.recipe_id %></td>
+        </tr>
+      <% end %>
+    </table>
+    </div>
+    <div class="col-md-8" >
+
+    </div>
+</div>
+
+
+
+
+
