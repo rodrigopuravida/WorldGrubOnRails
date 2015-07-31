@@ -12,7 +12,14 @@
     <% @recipes.each do |recipe| %>
 
         <tr>
-        <td><%= recipe.recipe_id %></td>
+        <td><%= recipe.recipe_id %>
+        <td>
+        <span class="glyphicon glyphicon-earphone"></span>
+        </td>
+        <td>
+        <span class="glyphicon glyphicon-trash"></span>
+        </td>
+        </td>
         </tr>
       <% end %>
     </table>

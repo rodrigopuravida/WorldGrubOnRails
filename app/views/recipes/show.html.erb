@@ -6,19 +6,21 @@
 
     <div class="col-md-4" >
     <table class="table table-striped">
-    <tbody>
-        <tr>
-                <% @data.each do |item| %>
-                 <h1><%= link_to item["id"], recipes_path(:recipe=> item["id"]), :method => :post  %></h1>
+        <tbody>
+            <tr>
+                    <% @data.each do |item| %>
+                     <h1><%= link_to item["id"], recipes_path(:recipe=> item["id"]), :method => :post  %></h1>
 
-                <h1><%= item["title"] %></h1>
-                <div ><img class="recipe_image" src=<%= @baseUri + item["image"]%> ></div>
-                <% end %>
+                    <h1><%= item["title"] %></h1>
+                    <div ><img class="recipe_image" src=<%= @baseUri + item["image"]%> ></div>
+                    <% end %>
             </tr>
-            </table>
+        </tbody>
+    </table>
     </div>
     <div class="col-md-8" >
     <table>
+        <tbody>
         <tr>
                 <% @dataRecipeInfo.each do |info| %>
                 <h3><%=info["originalString"]%></h3>
