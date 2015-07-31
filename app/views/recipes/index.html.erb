@@ -3,14 +3,17 @@
             <%= image_tag("worldgrub.jpg")%>
 
             </header><!-- end header -->
-            <h1 class="index_header">Ingredients</h1>
 
         <div id="main-container" class="container">
             <sdiv class="row">
                 <div class="col-md-8" class="font-mega">
 
-
-                            <%= bootstrap_form_for :recipe, url: "/recipes/chinese", :method => :get, html: {class: "recipe_form"} do |f| %>
+                <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Type in</h3>
+            </div>
+            <div class="panel-body">
+              <%= bootstrap_form_for :recipe, url: "/recipes/chinese", :method => :get, html: {class: "recipe_form"} do |f| %>
                               <%= f.text_field :ingredients, class: "ingredient-list-text", id: "ingredient-list", size: "80", :readonly => false  %>
                               <div class="col-md-3">
                               <%= f.radio_button :region, "african" %> African<br />
@@ -28,6 +31,8 @@
                               <%= f.radio_button :region, "mexican" %> Mexican<br />
                               <%= f.radio_button :region, "greek" %> Greek<br />
                               </div>
+            </div>
+          </div>
 
                 </div>
                 <div class="col-md-4">
