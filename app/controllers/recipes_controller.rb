@@ -14,13 +14,14 @@ class RecipesController < ApplicationController
         p recipe_params
 
         recipesIds = [];
-        allRecipesInfo = [];
+        @allRecipesInfo = [];
         dataSourceUrl = [];
         allDirectionsInfo = [];
         urlStringReplaceSign = '';
+        
 
 
-        response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=" + @region + "&number=3&offset=0&query=" + @ingredients,
+        response = Unirest.get "https://webknox-recipes.p.mashape.com/recipes/search?cuisine=" + @region + "&number=2&offset=0&query=" + @ingredients,
         headers:{ "X-Mashape-Key" => ENV["RECIPE_API"], "Accept" => "application/json" }
 
         @data = response.body["results"];
@@ -38,24 +39,16 @@ class RecipesController < ApplicationController
 
             @dataRecipeInfo = response2.body["extendedIngredients"]
 
-            allRecipesInfo.push(@dataRecipeInfo)
+            @allRecipesInfo.push(@dataRecipeInfo)
         end
-
-#       render json: @dataRecipeInfo;
+#        render json: @dataRecipeInfo;
+#       render json: @allRecipesInfo;
     end
 
     def display_my_favorites
 
         @recipes = current_user.recipes.all
-        # respond_to do |format|
-        # format.html
-        # format.json {render json: @my_recipes}
-        # format.xml {render xml: @my_recipes}
-        # end
-
-        # render @my_recipes
-
-
+        
     end
 
 

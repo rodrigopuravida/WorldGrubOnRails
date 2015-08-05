@@ -22,8 +22,13 @@
     <table>
         <tbody>
         <tr>
-                <% @dataRecipeInfo.each do |info| %>
-                <h3><%=info["originalString"]%></h3>
+                
+                <% @allRecipesInfo.each do |info| %>
+                <h3 class="ingredients">Ingredients </h3>
+                <% info.each do |originalString| %>
+                
+                <h3><%=originalString["originalString"]%></h3>
+                <% end %>
                 <% end %>
         </tr>
         </tbody>
